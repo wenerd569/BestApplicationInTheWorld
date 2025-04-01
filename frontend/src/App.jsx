@@ -2,9 +2,14 @@ import "./App.css";
 import React from "react";
 import CardsConteiner from "./CardsConteiner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import mapImage from "./RussiaMap.png";
 
 const Map = () => {
-  return <img src="../public/RussiaMap.png" className="img" />;
+  return (
+    <div>
+      <img src={mapImage} className="img" />
+    </div>
+  );
 };
 
 function App() {

@@ -3,8 +3,8 @@ import "./App.css";
 
 const NAMES = ["Sashsa", "Grisha", "Lida", "Serg"];
 
-const w = 1400;
-const h = 700;
+const w = 1200;
+const h = 650;
 
 const colors = [
   "#FF6B6B",
