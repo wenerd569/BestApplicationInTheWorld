@@ -1,7 +1,28 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const NAMES = ["Sashsa", "Grisha", "Lida", "Serg"];
+const data = [
+  { name: "Sashsa" },
+  { name: "Grisha", distance: 10 },
+  { name: "Lida" },
+  { name: "Serg", message: "to yourself" },
+  { name: "Sashsa" },
+  { name: "Grisha", distance: 10 },
+  { name: "Lida" },
+  { name: "Serg", message: "to yourself" },
+  { name: "Sashsa" },
+  { name: "Grisha", distance: 10 },
+  { name: "Lida" },
+  { name: "Serg", message: "to yourself" },
+  { name: "Sashsa" },
+  { name: "Grisha", distance: 10 },
+  { name: "Lida" },
+  { name: "Serg", message: "to yourself" },
+];
+
+// const fetchData = () => {
+
+// }
 
 const w = 1200;
 const h = 650;
@@ -23,7 +44,7 @@ const CardsContainer = () => {
     (() => {
       const newCards = [];
 
-      for (let i = 0; i < NAMES.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         const color = colors[Math.floor(Math.random() * colors.length)];
         const width = Math.floor(Math.random() * 100) + 100;
         const height = Math.floor(Math.random() * 80) + 80;
@@ -36,7 +57,7 @@ const CardsContainer = () => {
           left,
           top,
           color,
-          name: NAMES[i],
+          ...data[i],
         });
 
         setCards(newCards);
@@ -57,7 +78,10 @@ const CardsContainer = () => {
             left: card.left,
           }}
         >
-          {card.name}
+          <div style={{ fontWeight: "bold" }}>
+            {card.name}: {card.distance ? card.distance : "???"} м от вас
+          </div>
+          <div>{card.message}</div>
         </div>
       ))}
     </div>
